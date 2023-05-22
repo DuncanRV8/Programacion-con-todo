@@ -44,29 +44,23 @@ public class CuentaCorriente {
 
     //Metodos
     //Metodo de ingresar
-    public boolean ingresar(double ingresar){
+    public boolean ingresar(double ingresar) throws Exception{
         if (ingresar <= 0) {
-            System.out.println("ERROR: No se ha podido hacer el ingreso");
-            return false;
+            throw new Exception("No se ha podido hacer el ingreso");
         }
-        else{
-            this.saldo += ingresar - 1.00;
-            System.out.println("Se ha hecho correctamente el ingreso");
-            return true;
-        }
+        this.saldo += ingresar - 1.00;
+        System.out.println("Se ha hecho correctamente el ingreso");
+        return true;
     }
 
     //retirar
-    public boolean retirar(double retirar){
+    public boolean retirar(double retirar)throws Exception{
         if (retirar > this.saldo && retirar <= 0 ) {
-            System.out.println("ERROR: No se ha podido retirar el dinero");
-            return false;
+            throw new Exception("No se ha podido retirar");
         }
-        else{
-            this.saldo = (this.saldo - retirar) - 1.00; 
-            System.out.println("Se ha podido retirar");
-            return true;
-        }
+        this.saldo = (this.saldo - retirar) - 1.00; 
+        System.out.println("Se ha podido retirar");
+        return true;
     }
 
     //Actualizar mensualidad
