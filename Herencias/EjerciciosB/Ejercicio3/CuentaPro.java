@@ -1,3 +1,8 @@
-public class CuentaPro {
+public class CuentaPro extends CuentaCorriente {
     
+    //constructor
+    public CuentaPro() {
+     
+        
+    }
 }
