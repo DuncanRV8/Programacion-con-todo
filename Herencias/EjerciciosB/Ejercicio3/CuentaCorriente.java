@@ -3,7 +3,7 @@ public class CuentaCorriente {
     //Atributos
     protected String titular;
     protected double saldo;
-    private double comisionOperacion = 1.00;
+    private double comisionOperacion = 1;
 
 
     //Constructores
