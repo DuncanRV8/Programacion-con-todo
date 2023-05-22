@@ -2,7 +2,7 @@ public class CuentaAhorro extends CuentaCorriente {
     
     //Atributos
     private int contadorOperaciones = 0;
-    private int maxOperaciones = 3; 
+    final static int maxOperaciones = 3; 
 
     //Constructor
     public CuentaAhorro(String titular, double saldo) {
