@@ -55,7 +55,7 @@ public class CuentaCorriente {
         if (retirar > this.saldo && retirar <= 0 ) {
             throw new Exception("No se ha podido retirar");
         }
-        this.saldo = (this.saldo - retirar) - comisionOperacion; 
+        this.saldo = (this.saldo - retirar) - comisionOperacion;
         return true;
     }
 
