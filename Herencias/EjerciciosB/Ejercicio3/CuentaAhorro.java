@@ -13,11 +13,15 @@ public class CuentaAhorro extends CuentaCorriente {
 
     //Metodos
     public boolean ingresar(double ingresar)throws Exception{
-        if (contadorOperaciones > maxOperaciones) {
-            throw new Exception("ERROR: No puedes hacer mas de 3 ingresos al mes");
+        if (contadorOperaciones > maxOperaciones && super.ingresar(ingresar)) {
+            contadorOperaciones++;
+            return true;
         }
-        super.ingresar(ingresar);
-        return true;
+        else{
+            return false;
+        }
+       
+        
     }
 
     public String toString(){
