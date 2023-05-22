@@ -4,7 +4,8 @@ public class CuntaMain {
         ArrayList<CuentaCorriente> cuentas = new ArrayList<>();
 
         CuentaCorriente c1 = new CuentaCorriente("Lio", 300);
-        CuentaAhorro a1 = new CuentaAhorro("Nacho", 20.00);
+        CuentaAhorro p1 = new CuentaAhorro("Nacho", 20.00);
+        CuentaPro a1 = new CuentaPro("Maria", 200.00);
 
         System.out.println(c1);
 
@@ -25,11 +26,29 @@ public class CuntaMain {
             System.out.println(" ");
             a1.ingresar(10);
             System.out.println(a1);
+
+            System.out.println(" ");
+            p1.ingresar(100);
+            System.out.println(p1);
+
+            System.out.println(" ");
+            p1.retirar(100);
+            System.out.println(p1);
+
+            System.out.println(" ");
+            p1.actualizarMensualidad();
+            System.out.println(p1);
+
+            System.out.println(" ");
+            a1.retirar(100);
+            System.out.println(a1);
+
+            System.out.println(" ");
+            a1.actualizarMensualidad();
+            System.out.println(a1);
             
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
-        
     }
 }

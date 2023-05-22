@@ -13,18 +13,25 @@ public class CuentaAhorro extends CuentaCorriente {
 
     //Metodos
     public boolean ingresar(double ingresar)throws Exception{
-        if (contadorOperaciones > maxOperaciones && super.ingresar(ingresar)) {
+        if (contadorOperaciones < maxOperaciones && super.ingresar(ingresar)) {
             contadorOperaciones++;
             return true;
         }
         else{
             return false;
-        }
-       
-        
+        } 
     }
 
-    public String toString(){
-        return super.toString();
+    public boolean retirar(double retirar)throws Exception{
+        if (contadorOperaciones < maxOperaciones && super.retirar(retirar)) {
+            contadorOperaciones++;
+            return true;
+        }
+        return false;
+    }
+
+    public boolean actualizarMensualidad(){
+        super.actualizarMensualidad();
+        return true;
     }
 }
