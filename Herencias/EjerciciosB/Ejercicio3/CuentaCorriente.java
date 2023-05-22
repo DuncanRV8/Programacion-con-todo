@@ -3,7 +3,7 @@ public class CuentaCorriente {
     //Atributos
     protected String titular;
     protected double saldo;
-    private double comisionOperacion = 1.01;
+    private double comisionOperacion = 1.00;
 
 
     //Constructores
@@ -71,7 +71,7 @@ public class CuentaCorriente {
 
     //Actualizar mensualidad
     public boolean actualizarMensualidad(){
-        this.saldo = (this.saldo * comisionOperacion) - 5;
+        this.saldo = this.saldo * (comisionOperacion + 0.01) - 5;
         return true;
     } 
 
