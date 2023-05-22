@@ -11,10 +11,6 @@ public class CuntaMain {
             c1.setSaldo(200);
 
             System.out.println(" ");
-            c1.ingresar(-1000);
-            System.out.println(c1);
-
-            System.out.println(" ");
             c1.ingresar(300.00);
             System.out.println(c1);
 
