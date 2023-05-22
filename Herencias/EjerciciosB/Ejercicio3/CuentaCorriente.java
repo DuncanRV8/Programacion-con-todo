@@ -3,11 +3,12 @@ public class CuentaCorriente {
     //Atributos
     protected String titular;
     protected double saldo;
-    private double comisionOperacion = 1;
+    protected double comisionOperacion = 1;
+    protected double comisionMensual = 5;
+    protected double ingresoMensual = 1.01;
 
 
     //Constructores
-
     public CuentaCorriente(String titular, double saldo){
         setTitular(titular);
         try {
@@ -45,8 +46,7 @@ public class CuentaCorriente {
         if (ingresar <= 0) {
             throw new Exception("No se ha podido hacer el ingreso");
         }
-        this.saldo += ingresar - 1.00;
-        System.out.println("Se ha hecho correctamente el ingreso");
+        this.saldo += ingresar - comisionOperacion;
         return true;
     }
 
@@ -55,14 +55,13 @@ public class CuentaCorriente {
         if (retirar > this.saldo && retirar <= 0 ) {
             throw new Exception("No se ha podido retirar");
         }
-        this.saldo = (this.saldo - retirar) - 1.00; 
-        System.out.println("Se ha podido retirar");
+        this.saldo = (this.saldo - retirar) - comisionOperacion; 
         return true;
     }
 
     //Actualizar mensualidad
     public boolean actualizarMensualidad(){
-        this.saldo = this.saldo * (comisionOperacion + 0.01) - 5;
+        this.saldo = this.saldo * ingresoMensual - comisionMensual;
         return true;
     } 
 
