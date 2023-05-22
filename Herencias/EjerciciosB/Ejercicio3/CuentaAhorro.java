@@ -1,6 +1,9 @@
 public class CuentaAhorro extends CuentaCorriente {
     
-    public CuentaAhorro() {
-       
+
+
+    //Constructor
+    public CuentaAhorro(String titular, double saldo) {
+      super(titular, saldo);
     }
 }

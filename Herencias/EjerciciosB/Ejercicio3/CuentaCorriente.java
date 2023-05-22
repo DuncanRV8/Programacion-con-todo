@@ -7,9 +7,6 @@ public class CuentaCorriente {
 
 
     //Constructores
-    public CuentaCorriente(){
-        
-    }
 
     public CuentaCorriente(String titular, double saldo){
         setTitular(titular);
