@@ -6,7 +6,7 @@ public class Planeta extends Astro {
     private double distanciaSol;
     private ArrayList<Satelite> satelites = new ArrayList<>();
 
-    Satelite s1 = new Satelite("Pipo", 10, 10, 400000);
+    
     
     //constructor
     public Planeta(){
@@ -19,8 +19,8 @@ public class Planeta extends Astro {
     }
 
     //agregar satelites
-    public boolean agregarSatelite(){
-        satelites.add(s1);
+    public boolean agregarSatelite(Satelite s){
+        satelites.add(s);
         return true;
     }
 

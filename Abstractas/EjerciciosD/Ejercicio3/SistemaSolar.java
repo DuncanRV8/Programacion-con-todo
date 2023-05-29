@@ -6,13 +6,9 @@ public class SistemaSolar {
     private String nombre = "pepe";
     private ArrayList<Planeta> planetas = new ArrayList<>();
 
-    Planeta p1 = new Planeta("Duncan", 23, 40, 1000);
-    Planeta p2 = new Planeta("Nacho", 20, 100, 2);
-    
     //metodos
-    public boolean agregar(){
-        planetas.add(p1);
-        planetas.add(p2);
+    public boolean agregar(Planeta p){
+        planetas.add(p);
         return true;
     }
 

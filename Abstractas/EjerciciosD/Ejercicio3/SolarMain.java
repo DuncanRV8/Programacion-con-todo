@@ -1,11 +1,18 @@
 public class SolarMain {
     public static void main(String[] args) {
         SistemaSolar sistema = new SistemaSolar();
+        Planeta planetas = new Planeta();
+        Planeta p1 = new Planeta("Duncan", 23, 40, 1000);
+        Planeta p2 = new Planeta("Nacho", 20, 100, 2);
 
-        sistema.agregar();
+        Satelite s1 = new Satelite("Pipo", 10, 10, 400000);
+
+        sistema.agregar(p1);
         sistema.verPlanetas();
-        sistema.eliminar();
-        sistema.verPlanetas();
+
+        planetas.agregarSatelite(s1);
+        planetas.verSatelites();
+    
 
     }
 }
