@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class VectorInt implements IMinMax{
+public class VectorInt implements IMinMax,IEstadisticas{
 
     //Atributos
     int[] vector;
@@ -25,6 +25,8 @@ public class VectorInt implements IMinMax{
         }
     }
 
+
+    //metodos IMinMax
     public int getMinimo(){
         int min = Integer.MAX_VALUE;
         for (int i = 0; i < vector.length; i++) {
@@ -45,9 +47,63 @@ public class VectorInt implements IMinMax{
         return max;
     }
 
+    //metodos Iestadisticas
+    public double getMedia(){
+        int media = 0;
+        for (int i = 0; i < vector.length; i++) {
+            media += vector[i]; 
+        }
+        media = media / vector.length;
+        return media;
+    }
+
+    public double getMediana(){
+        Arrays.sort(vector);
+        if (vector.length %2 == 0) {
+            int numIz, numDe, mediana;
+            numDe = vector[vector.length / 2];
+            numIz = vector[vector.length / 2 -1];
+            mediana = (numDe + numIz) / 2;
+            return mediana;
+        }
+        else{
+            int mediana;
+            mediana = vector[vector.length / 2];
+            return mediana;
+        }
+    }
+
+    public int getModa(){
+        Arrays.sort(vector);
+        int contador = 1;
+        int contadorNumMax = 1;
+        int numActual = vector[0];
+        int moda = numActual;
+        for (int i = 1; i < vector.length; i++) {
+            if (numActual == vector[i]) {
+                contador++;
+                
+            }
+            else{
+                if (contador > contadorNumMax) {
+                    contadorNumMax = contador;
+                    moda = vector[numActual];
+                }
+                contador = 1;
+                numActual = vector[i];
+            }
+        }
+        if (contador > contadorNumMax) {
+            moda = numActual;
+        }
+        return moda;
+    }
+
     @Override
     public String toString() {
         return "VectorInt [vector=" + Arrays.toString(vector) + "]";
 
     }
+
+
 }
