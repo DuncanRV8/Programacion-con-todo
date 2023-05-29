@@ -50,6 +50,4 @@ public class VectorInt implements IMinMax{
         return "VectorInt [vector=" + Arrays.toString(vector) + "]";
 
     }
-
-    
 }
