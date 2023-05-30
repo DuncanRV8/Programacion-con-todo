@@ -3,7 +3,6 @@ public class SolarMain {
         SistemaSolar sistema = new SistemaSolar();
         Planeta planetas = new Planeta();
         Planeta p1 = new Planeta("Duncan", 23, 40, 1000);
-        Planeta p2 = new Planeta("Nacho", 20, 100, 2);
 
         Satelite s1 = new Satelite("Pipo", 10, 10, 400000);
 
