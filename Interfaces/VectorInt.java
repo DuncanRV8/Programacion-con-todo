@@ -100,22 +100,28 @@ public class VectorInt implements IMinMax,IEstadisticas,IComparable{
     //IComparable
 
     public boolean esIgual(int[] v){
-        String num = null;
-        String num2 = null;
+        String num1 = "";
+        String num2 = "";
         for (int i = 0; i < v.length; i++) {
             String vec = String.valueOf(v[i]);
-            num += vec;
+            num1 += vec;
         }
-        Integer.parseInt(num);
+        Integer.parseInt(num1);
 
         for (int i = 0; i < vector.length; i++) {
             String vec2 = String.valueOf(vector[i]);
-            num2+= vec2;
+            num2 += vec2;
         }
         Integer.parseInt(num2);
-        return true;
 
-        
+        if (num1 == num2) {
+            System.out.println("Es igual");
+            return true; 
+        }
+        else{
+            System.out.println("No es igual");
+            return false;
+        }
     }
 
     public boolean esMayor(int[] v){

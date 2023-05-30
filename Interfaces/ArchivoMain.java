@@ -1,10 +1,11 @@
 public class ArchivoMain {
     public static void main(String[] args) {
-        VectorInt vector = new VectorInt(5);
-        vector.random(1, 2000000000);
+        VectorInt vector = new VectorInt(1);
+        vector.random(0, 1);
         System.out.println(vector.toString());
-        VectorInt vect = new VectorInt(6);
-        vect.random(2, 10);
+        VectorInt vect = new VectorInt(1);
+        vect.random(1, 1);
+        System.out.println(vect.toString());
         vector.esIgual(vect.vector);
     }
 }
