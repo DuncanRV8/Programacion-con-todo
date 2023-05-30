@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class VectorInt implements IMinMax,IEstadisticas{
+public class VectorInt implements IMinMax,IEstadisticas,IComparable{
 
     //Atributos
     int[] vector;
@@ -24,7 +24,6 @@ public class VectorInt implements IMinMax,IEstadisticas{
             vector[i] = (int) (Math.random() * (max - min +1 ) + min);
         }
     }
-
 
     //metodos IMinMax
     public int getMinimo(){
@@ -82,7 +81,6 @@ public class VectorInt implements IMinMax,IEstadisticas{
         for (int i = 1; i < vector.length; i++) {
             if (numActual == vector[i]) {
                 contador++;
-                
             }
             else{
                 if (contador > contadorNumMax) {
@@ -97,6 +95,35 @@ public class VectorInt implements IMinMax,IEstadisticas{
             moda = numActual;
         }
         return moda;
+    }
+
+    //IComparable
+
+    public boolean esIgual(int[] v){
+        String num = null;
+        String num2 = null;
+        for (int i = 0; i < v.length; i++) {
+            String vec = String.valueOf(v[i]);
+            num += vec;
+        }
+        Integer.parseInt(num);
+
+        for (int i = 0; i < vector.length; i++) {
+            String vec2 = String.valueOf(vector[i]);
+            num2+= vec2;
+        }
+        Integer.parseInt(num2);
+        return true;
+
+        
+    }
+
+    public boolean esMayor(int[] v){
+        return true;
+    }
+
+    public boolean esMenor(int[] v){
+        return true;
     }
 
     @Override
